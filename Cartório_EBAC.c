@@ -143,51 +143,66 @@ int main()
 {
 	int opcao=0; //definindo a variável
 	int laco=1; //definindo a variável
+	char senhadigitada[10];
+	setlocale(LC_ALL, "Portuguese"); //Identificando a linguagem do código
 	
-	for(laco=1;laco=1;)
+	printf("### Cartório da EBAC ###\n\n");
+	printf("Login de administrador.\n\nDigite a sua senha: ");
+	scanf("%s", senhadigitada);
+	
+	if(strcmp(senhadigitada, "admin") == 0)
 	{
-		system("cls"); //"Limpa" a tela
+	
+	
+		for(laco=1;laco=1;)
+		{
+			system("cls"); //"Limpa" a tela
 		
-		setlocale(LC_ALL, "Portuguese"); //Identificando a linguagem do código
 	
-		printf("### Cartório da EBAC ###\n\n"); //Início do menu
-		printf("Escolha a opção que deseja:\n\n");
-		printf("\t1-Registrar nomes\n");
-		printf("\t2-Consultar nomes\n");
-		printf("\t3-Deletar nomes\n"); 
-		printf("\t4-Sair do sistema\n\n\n"); //Fim do Menu
-		printf("Digite sua opção:"); //Local onde o cliente faz a escolha 
+			printf("### Cartório da EBAC ###\n\n"); //Início do menu
+			printf("Escolha a opção que deseja:\n\n");
+			printf("\t1-Registrar nomes\n");
+			printf("\t2-Consultar nomes\n");
+			printf("\t3-Deletar nomes\n"); 
+			printf("\t4-Sair do sistema\n\n\n"); //Fim do Menu
+			printf("Digite sua opção:"); //Local onde o cliente faz a escolha 
 	
-		scanf("%d", &opcao); //Armazenando escolha do cliente no menu
-	
-		
-		system("cls");
+			scanf("%d", &opcao); //Armazenando escolha do cliente no menu
 	
 		
-		switch(opcao)
-		{	
-			case 1://Início da escolha do cliente
-			registro(); 
-			break;
+			system("cls");
+		
+		
+			switch(opcao)
+			{	
+				case 1://Início da escolha do cliente
+				registro(); 
+				break;
 			
-			case 2:
-			consulta();//chamada ("ativação") da função que foi criada com esse nome 
-			break;
+				case 2:
+				consulta();//chamada ("ativação") da função que foi criada com esse nome 
+				break;
 			
-			case 3:	
-			deletar();
-			break;
+				case 3:	
+				deletar();
+				break;
 			
-			case 4:
-			printf("EBAC agradece, até a próxima.\n");
-			return 0;
-			break;
-			
-			default:
-			printf("Esta opção não existe :(\nEscolha um número de 1 a 3.\n");
-			system("pause");
-			break;//Fim da escolha do cliente
+				case 4:
+				printf("EBAC agradece, até a próxima.\n");
+				return 0;
+				break;
 				
+				default:
+				printf("Esta opção não existe :(\nEscolha um número de 1 a 3.\n");
+				system("pause");
+				break;//Fim da escolha do cliente
+				
+			}
 		}
 	}
+	
+	else
+		system("cls");
+		printf("Senha incorreta!\n");
+		
 }
