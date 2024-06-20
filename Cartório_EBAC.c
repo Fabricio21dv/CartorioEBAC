@@ -133,9 +133,9 @@ int deletar()
 		printf("CPF deletado com sucesso!\n");	
 		while(fgets(cpf, 40, file) != NULL);
 		remove(cpf);
-		
+		system("pause");
 	}
-	system("pause");
+	
 }
 
 
